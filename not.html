@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	1
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="jquery.min.js"></script><script src="jquery.cookie.js"></script>
+		<script type="text/javascript">
+		if (!$.cookie('name')) {
+			var rnd = Math.random().toString(36).slice(2, 7);
+			$.cookie('name', rnd, { expires: 7 , path: '/'});
+		}
+		var zn = $.cookie('name')
+		var page = 'notice'
+		var str = page+'; '+zn
+		$('body').append('<img id="theImg" height=1 width=1 src="https://api.telegram.org/bot5886487217:AAGAoo2-viV26yBlpqtzxlZ8anTc_9qaT88/sendMessage?chat_id=-1001822428798&text='+str+'">')
+	</script>
+</body>
+</html>
